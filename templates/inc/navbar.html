@@ -1,0 +1,38 @@
+<section class="banner-area" id="home">
+    <header class="default-header">
+        <nav class="navbar navbar-expand-lg  navbar-light">
+            <div class="container">
+                <a class="navbar-brand text-white" href="{% url 'main' %}">
+                    Рыбалка с Андреем Фоминым
+                    <img src="img/logo.png" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="text-white lnr lnr-menu"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end align-items-center"
+                     id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li><a href="{% url 'main' %}">Главная</a></li>
+                        <li><a href="{% url 'about' %}">Обо мне</a></li>
+                        <li><a href="{% url 'boat' %}">Моя лодка</a></li>
+                        <li><a href="{% url 'service' %}">Услуги</a></li>
+                        <li><a href={% url 'gallery' %}>Галерея</a></li>
+                        <li><a href="{% url 'contact' %}">Контакты</a></li>
+{#                        <li class="dropdown">#}
+{#                            <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">#}
+{#                                Pages#}
+{#                            </a>#}
+{#                            <div class="dropdown-menu">#}
+{#                                <a class="dropdown-item" href="generic.html">Generic</a>#}
+{#                                <a class="dropdown-item" href="elements.html">Elements</a>#}
+{#                            </div>#}
+{#                        </li>#}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+</section>
