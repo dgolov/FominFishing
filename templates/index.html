@@ -1,0 +1,371 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="banner-area" id="home">
+    <header class="default-header">
+        <nav class="navbar navbar-expand-lg  navbar-light">
+            <div class="container">
+                <a class="navbar-brand text-white" href="index.html">
+                    Рыбалка с Андреем Фоминым
+                    <img src="img/logo.png" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="text-white lnr lnr-menu"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end align-items-center"
+                     id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#about">Обо мне</a></li>
+                        <li><a href="#faq">Моя лодка</a></li>
+                        <li><a href="#secvice">Услуги</a></li>
+                        <li><a href="#gallery">Галерея</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+{#                        <li class="dropdown">#}
+{#                            <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">#}
+{#                                Pages#}
+{#                            </a>#}
+{#                            <div class="dropdown-menu">#}
+{#                                <a class="dropdown-item" href="generic.html">Generic</a>#}
+{#                                <a class="dropdown-item" href="elements.html">Elements</a>#}
+{#                            </div>#}
+{#                        </li>#}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+</section>
+
+<section class="default-banner active-blog-slider">
+    <div class="item-slider relative"
+         style="background: url({% static 'img/main/photo_2022-04-03 19.35.17.jpeg' %}); background-size: cover; background-position: center 30%;">
+        <div class="overlay" style="background: rgba(0,0,0,.3)"></div>
+        <div class="container">
+            <div class="row fullscreen justify-content-center align-items-center">
+                <div class="col-md-10 col-12">
+                    <div class="banner-content text-center">
+                        <h4 class="text-white mb-20 text-uppercase">Получи незабываемые ощущения от</h4>
+                        <h2 class="text-uppercase text-white">Ловли трофея</h2>
+                        <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            temp <br>
+                            or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+                        <a href="#" class="text-uppercase header-btn">Записаться</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="item-slider relative"
+         style="background: url({% static 'img/main/22008102_481461718891504_5273920237415352670_n.jpg' %});background-size: cover; background-position: center center;">
+        <div class="overlay" style="background: rgba(0,0,0,.3)"></div>
+        <div class="container">
+            <div class="row fullscreen justify-content-center align-items-center">
+                <div class="col-md-10 col-12">
+                    <div class="banner-content text-center">
+                        <h4 class="text-white mb-20 text-uppercase">Получи незабываемые ощущения от</h4>
+                        <h2 class="text-uppercase text-white">Прогулки на катере</h2>
+                        <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            temp <br>
+                            or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+                        <a href="#" class="text-uppercase header-btn">Записаться</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="item-slider relative"
+         style="background: url({% static 'img/main/21994203_481460248891651_5468901035780377593_o.jpg' %});background-size: cover; background-position: center center;">
+        <div class="overlay" style="background: rgba(0,0,0,.3)"></div>
+        <div class="container">
+            <div class="row fullscreen justify-content-center align-items-center">
+                <div class="col-md-10 col-12">
+                    <div class="banner-content text-center">
+                        <h4 class="text-white mb-20 text-uppercase">Получи незабываемые ощущения от</h4>
+                        <h2 class="text-uppercase text-white">Волжских красот</h2>
+                        <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            temp <br>
+                            or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+                        <a href="#" class="text-uppercase header-btn">Записаться</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-gap info-area" id="about">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="menu-content pb-40 col-lg-9">
+                <div class="title text-center">
+                    <h1 class="mb-10">Рыбалка с гидом в Нижегородской области</h1>
+                    <p style="font-size: 20px;">Запишись на трофейную рыбалку с Андреем Фоминым.</p>
+                </div>
+            </div>
+        </div>
+        <div class="single-info row mt-40">
+            <div class="col-lg-6 col-md-12 mt-120 text-center no-padding info-left">
+                <div class="info-thumb">
+                    <img src="{% static 'img/main/photo_2022-04-03 20.04.55.jpeg' %}" class="img-fluid" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 no-padding info-rigth">
+                <div class="info-content">
+                    <h2 class="pb-30">We Realize that <br>
+                        there are reduced <br>
+                        Wastege Stand out</h2>
+                    <p>
+                        inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct
+                        standards – especially in the workplace. That’s why it’s crucial that, as women.
+                    </p>
+                    <br>
+                    <p>
+                        inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct
+                        standards – especially in the workplace. That’s why it’s crucial that, as women. inappropriate
+                        behavior is often laughed off as “boys will be boys,” women face higher conduct standards –
+                        especially in the workplace. That’s why it’s crucial that, as women.
+                    </p>
+                    <br>
+                    <p>
+                        inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct
+                        standards – especially in the workplace. That’s why it’s crucial that, as women.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Start project Area -->
+<section class="project-area section-gap" id="project">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="menu-content pb-30 col-lg-8">
+                <div class="title text-center">
+                    <h1 class="mb-10">Latest Project on the go</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        <br> labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center d-flex">
+            <div class="active-works-carousel mt-40 col-lg-8">
+                <div class="item">
+                    <img class="img-fluid" src="img/why.jpg" alt="">
+                    <div class="caption text-center mt-20">
+                        <h6 class="text-uppercase">Vector Illustration</h6>
+                        <p>LCD screens are uniquely modern in style, and the liquid crystals that make them work have
+                            <br> allowed humanity to create slimmer, more portable technology.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="img-fluid" src="img/why.jpg" alt="">
+                    <div class="caption text-center mt-20">
+                        <h6 class="text-uppercase">Vector Illustration</h6>
+                        <p>LCD screens are uniquely modern in style, and the liquid crystals that make them work have
+                            <br> allowed humanity to create slimmer, more portable technology.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="img-fluid" src="img/why.jpg" alt="">
+                    <div class="caption text-center mt-20">
+                        <h6 class="text-uppercase">Vector Illustration</h6>
+                        <p>LCD screens are uniquely modern in style, and the liquid crystals that make them work have
+                            <br> allowed humanity to create slimmer, more portable technology.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="img-fluid" src="img/why.jpg" alt="">
+                    <div class="caption text-center mt-20">
+                        <h6 class="text-uppercase">Vector Illustration</h6>
+                        <p>LCD screens are uniquely modern in style, and the liquid crystals that make them work have
+                            <br> allowed humanity to create slimmer, more portable technology.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="img-fluid" src="img/why.jpg" alt="">
+                    <div class="caption text-center mt-20">
+                        <h6 class="text-uppercase">Vector Illustration</h6>
+                        <p>LCD screens are uniquely modern in style, and the liquid crystals that make them work have
+                            <br> allowed humanity to create slimmer, more portable technology.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End project Area -->
+
+
+<!-- Start feature Area -->
+<section class="feature-area section-gap" id="secvice">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="menu-content pb-60 col-lg-8">
+                <div class="title text-center">
+                    <h1 class="mb-10">Some Features that Made us Unique</h1>
+                    <p>Who are in extremely love with eco friendly system.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 ">
+                <div class="single-feature mb-30">
+                    <div class="title d-flex flex-row pb-20">
+                        <span class="lnr lnr-user"></span>
+                        <h4><a href="#">Expert Technicians</a></h4>
+                    </div>
+                    <p>
+                        Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 ">
+                <div class="single-feature mb-30">
+                    <div class="title d-flex flex-row pb-20">
+                        <span class="lnr lnr-license"></span>
+                        <h4><a href="#">Professional Service</a></h4>
+                    </div>
+                    <p>
+                        Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 ">
+                <div class="single-feature mb-30">
+                    <div class="title d-flex flex-row pb-20">
+                        <span class="lnr lnr-phone"></span>
+                        <h4><a href="#">Great Support</a></h4>
+                    </div>
+                    <p>
+                        Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 ">
+                <div class="single-feature">
+                    <div class="title d-flex flex-row pb-20">
+                        <span class="lnr lnr-rocket"></span>
+                        <h4><a href="#">Technical Skills</a></h4>
+                    </div>
+                    <p>
+                        Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 ">
+                <div class="single-feature">
+                    <div class="title d-flex flex-row pb-20">
+                        <span class="lnr lnr-diamond"></span>
+                        <h4><a href="#">Highly Recomended</a></h4>
+                    </div>
+                    <p>
+                        Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 ">
+                <div class="single-feature">
+                    <div class="title d-flex flex-row pb-20">
+                        <span class="lnr lnr-bubble"></span>
+                        <h4><a href="#">Positive Reviews</a></h4>
+                    </div>
+                    <p>
+                        Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End feature Area -->
+
+
+<!-- Start gallery Area -->
+<section class="gallery-area" id="gallery">
+    <div class="container-fluid">
+        <div class="row no-padding">
+            <div class="active-gallery">
+                <div class="item single-gallery">
+                    <img src="img/g1.jpg" alt="">
+                </div>
+                <div class="item single-gallery">
+                    <img src="img/g2.jpg" alt="">
+                </div>
+                <div class="item single-gallery">
+                    <img src="img/g3.jpg" alt="">
+                </div>
+                <div class="item single-gallery">
+                    <img src="img/g4.jpg" alt="">
+                </div>
+                <div class="item single-gallery">
+                    <img src="img/g5.jpg" alt="">
+                </div>
+                <div class="item single-gallery">
+                    <img src="img/g6.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End gallery Area -->
+
+
+<!-- Start logo Area -->
+<section class="logo-area">
+    <div class="container">
+        <div class="row">
+
+        </div>
+    </div>
+</section>
+<!-- End logo Area -->
+
+<section class="contact-area section-gap" id="contact">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="menu-content pb-60 col-lg-8">
+                <div class="title text-center">
+                    <h1 class="mb-10">Записаться на рыбалку мечты</h1>
+                    <p>Заполните форму для отправки заявки. Я обязательно с вами свяжусь в течени трех дней.</p>
+                </div>
+            </div>
+        </div>
+        <form class="form-area " id="myForm" action="mail.php" method="post" class="contact-form text-right">
+            <div class="row">
+                <div class="col-lg-6 form-group">
+                    <input name="name" placeholder="Укажите имя" onfocus="this.placeholder = ''"
+                           onblur="this.placeholder = 'Укажите имя'" class="common-input mb-20 form-control"
+                           required="" type="text">
+
+                    <input name="email" placeholder="Укажите email"
+                           pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''"
+                           onblur="this.placeholder = 'Укажите email'" class="common-input mb-20 form-control"
+                           required="" type="email">
+
+                    <input name="subject" placeholder="Укажите номер телефона" onfocus="this.placeholder = ''"
+                           onblur="this.placeholder = 'Укажите номер телефона'" class="common-input mb-20 form-control"
+                           required="" type="text">
+                </div>
+                <div class="col-lg-6 form-group">
+                    <textarea class="common-textarea mt-10 form-control" name="message" placeholder="Ваше сообщение"
+                              onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ваше сообщение'"
+                              required=""></textarea>
+                    <button class="primary-btn mt-20">Отправить<span class="lnr lnr-arrow-right"></span></button>
+                    <div class="alert-msg">
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</section>
+{% endblock %}
