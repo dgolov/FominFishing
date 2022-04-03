@@ -1,9 +1,12 @@
+import os
 from pathlib import Path
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-cfqt_co2mn*516pur&t9$+@t0(-32zfouhuh$&ag#s1s=yv!vj'
+
+SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
 DEBUG = True
 
@@ -35,8 +38,7 @@ ROOT_URLCONF = 'FominFishing.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
-        ,
+        'DIRS': [os.path.join(SETTINGS_PATH, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -85,7 +87,15 @@ USE_I18N = True
 USE_TZ = True
 
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(SETTINGS_PATH, 'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'web/static')
+]
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
