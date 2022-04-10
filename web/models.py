@@ -23,6 +23,7 @@ class Photo(models.Model):
     """
     short_description = models.CharField(max_length=100, verbose_name='Краткое описание')
     path = models.ImageField(upload_to='photos', verbose_name='Фотография')
+    in_main_page = models.BooleanField(default=False, verbose_name='На главной странице')
 
     class Meta:
         verbose_name = 'Фото'
