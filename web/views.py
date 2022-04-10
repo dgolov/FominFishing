@@ -8,7 +8,8 @@ class MainView(View):
     """ Представление главной страницы
     """
     def get(self, request, *args, **kwargs):
-        context = {}
+        photo = Photo.objects.all().filter(in_main_page=True)
+        context = {"photos": photo, "title": "Рыбалка с гидом в Нижегородской области"}
         return render(request, 'index.html', context)
 
 
@@ -16,7 +17,7 @@ class AboutView(View):
     """ Представление страницы обо мне
     """
     def get(self, request, *args, **kwargs):
-        context = {}
+        context = {"title": "Трофейная рыбалка с Андреем Фоминым"}
         return render(request, 'about.html', context)
 
 
@@ -24,7 +25,7 @@ class BoatView(View):
     """ Представление страницы о лодке
     """
     def get(self, request, *args, **kwargs):
-        context = {}
+        context = {"title": "Моя лодка"}
         return render(request, 'boat.html', context)
 
 
@@ -32,7 +33,7 @@ class ContactView(View):
     """ Представление страницы контакты
     """
     def get(self, request, *args, **kwargs):
-        context = {}
+        context = {"title": "Контакты"}
         return render(request, 'contact.html', context)
 
 
@@ -40,7 +41,7 @@ class ServiceView(View):
     """ Представление страницы услуги
     """
     def get(self, request, *args, **kwargs):
-        context = {}
+        context = {"title": "Услуги рыболовного гида"}
         return render(request, 'service.html', context)
 
 
