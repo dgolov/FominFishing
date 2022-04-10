@@ -2,6 +2,8 @@ from django.db import models
 
 
 class Service(models.Model):
+    """ Модели услуги
+    """
     name = models.CharField(max_length=100, verbose_name='Наименование услуги')
     slug = models.CharField(max_length=100, verbose_name='Ссылка')
     description = models.TextField(verbose_name='Описание услуги')
@@ -17,8 +19,10 @@ class Service(models.Model):
 
 
 class Photo(models.Model):
-    short_description = models.CharField(max_length=100, verbose_name='Наименование услуги')
-    path = models.IntegerField(unique='photos', verbose_name='Фотография')
+    """ Модели фотографии
+    """
+    short_description = models.CharField(max_length=100, verbose_name='Краткое описание')
+    path = models.ImageField(upload_to='photos', verbose_name='Фотография')
 
     class Meta:
         verbose_name = 'Фото'
@@ -29,6 +33,8 @@ class Photo(models.Model):
 
 
 class Request(models.Model):
+    """ Модели заявки
+    """
     name = models.CharField(max_length=150, verbose_name='ФИО')
     service = models.ForeignKey(Service, on_delete=models.SET_NULL, verbose_name='Услуга', null=True)
     date = models.DateField(verbose_name='Дата рыбалки')
@@ -46,6 +52,8 @@ class Request(models.Model):
 
 
 class Review(models.Model):
+    """ Модели отзыва
+    """
     name = models.CharField(max_length=150, verbose_name='ФИО')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата отзыва')
     email = models.EmailField(verbose_name='Email', blank=True, null=True)
