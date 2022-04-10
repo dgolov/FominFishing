@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.views import View
+from django.views.generic import ListView
+from .models import Photo
 
 
 class MainView(View):
@@ -42,9 +44,16 @@ class ServiceView(View):
         return render(request, 'service.html', context)
 
 
-class GalleryView(View):
+class GalleryView(ListView):
     """ Представление галерея
     """
-    def get(self, request, *args, **kwargs):
-        context = {}
-        return render(request, 'gallery.html', context)
+    template_name = 'gallery.html'
+    context_object_name = "photos"
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(GalleryView, self).get_context_data(**kwargs)
+        context['title'] = 'Галерея трофеев'
+        return context
+
+    def get_queryset(self):
+        return Photo.objects.all()

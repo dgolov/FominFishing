@@ -1,5 +1,37 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
+    <section class="generic-banner relative"
+             style="background: url({% static 'img/gallery/5CAA250D-C736-4E77-A4FF-B56329CAE0C3.JPG' %});
+                     background-size: cover; background-position: center 30%;">>
+        {% include 'inc/navbar.html' %}
+        <div class="container">
+            <div class="row height align-items-center justify-content-center">
+                <div class="col-lg-10">
+                    <div class="generic-banner-content">
+                        <h1 class="text-white mb-3">Галерея трофеев</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="whole-wrap">
+        <div class="container">
+        <p class="mt-5">Здесь вы можете посмотреть фотографии с наших рыбалок. Все снимки представлены без обработки и
+            сделаны мною, на моем катере. Фотографии являются моей собственностью и публикация их
+            <span style="font-weight: bold;">запрещена</span> без моего письменного разрешения.</p>
+            <div class="section-top-border">
+                <div class="row gallery-item">
+                    {% for photo in photos %}
+                    <div class="col-md-4">
+                        <a href="{{ photo.path.url }}" class="img-pop-up">
+                            <div class="single-gallery-image"
+                                 style="background: url({{ photo.path.url }});"></div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
