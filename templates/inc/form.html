@@ -1,0 +1,48 @@
+<section class="contact-area section-gap" id="contact">
+    {% if messages %}
+        <div class="alert alert-success" role="alert">
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                        {{ message }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="menu-content pb-60 col-lg-8">
+                <div class="title text-center">
+                    <h1 class="mb-10">Записаться на рыбалку мечты</h1>
+                    <p>Заполните форму для отправки заявки. Я обязательно с вами свяжусь в течени трех дней.</p>
+                </div>
+            </div>
+        </div>
+        <form class="form-area" method="post" class="contact-form text-right">
+            <div class="row">
+                <div class="col-lg-6 form-group">
+                    <label>Имя</label>
+                    {{ form.name }}
+                    <label>Желаемая дата рыбалки</label>
+                    {{ form.date }}
+                    <label>Email</label>
+                    {{ form.email }}
+                    <label>Номер телефона</label>
+                    {{ form.phone }}
+                </div>
+                <div class="col-lg-6 form-group">
+                    <label>Услуга</label>
+                    {{ form.service }}
+                    <label>Сообщение</label>
+                    {{ form.comment }}
+                    {% csrf_token %}
+                    <button class="primary-btn mt-20">Отправить<span class="lnr lnr-arrow-right"></span></button>
+                    <div class="alert-msg">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

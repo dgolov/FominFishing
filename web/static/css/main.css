@@ -2529,10 +2529,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.form-area input {
-  padding: 15px;
-}
-
 .form-area input, .form-area textarea {
   border-radius: 0;
   font-size: 12px;
