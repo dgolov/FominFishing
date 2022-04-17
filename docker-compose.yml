@@ -10,15 +10,15 @@ services:
       - static_volume:/home/app/web/static
       - media_volume:/home/app/web/media
     expose:
-      - 8000
+      - 8050
   nginx:
     build: ./nginx
     ports:
-      - 8000:80
+      - 8050:80
     depends_on:
       - web
     volumes:
-      - static_volume:/usr/src/web/static
+      - static_volume:/home/app/web/static
 volumes:
   static_volume:
   media_volume:
