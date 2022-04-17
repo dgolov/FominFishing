@@ -2,17 +2,91 @@
 {% load static %}
 
 {% block content %}
-    <section class="generic-banner relative">
+    <section class="generic-banner relative"
+             style="background: url({% static 'img/service/tild6531-3438-4932-b337-353033393363__7-960x540.jpg' %});
+                     background-size: cover; background-position: center 30%;">
         {% include 'inc/navbar.html' %}
         <div class="container">
             <div class="row height align-items-center justify-content-center">
                 <div class="col-lg-10">
                     <div class="generic-banner-content">
                         <h2 class="text-white">Услуги</h2>
-                        <p class="text-white">Ниже предоставлен список услуг.</p>
+                        <p class="text-white">Выберите сезон и понравившуюся вам услугу и укажите ее в форме записи.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <div class="whole-wrap">
+        <div class="container">
+            <h1 class="mt-5 mb-5">{{ title }}</h1>
+            <div class="row section-top-border">
+                <div class="col-md-6">
+                    <button class="genric-btn success radius w-100" onclick="summerBtnClick()">Летняя рыбалка</button>
+                </div>
+                <div class="col-md-6">
+                    <button class="genric-btn success radius w-100" onclick="winterBtnClick()">Зимняя рыбалка</button>
+                </div>
+            </div>
+            <div class="row">
+                {% for service in services %}
+                    {% if service.category.name == 'Летняя рыбалка' %}
+                        <div class="col-md-6 summer">
+                            <div class="card w-100">
+                                <img src="{{ service.photo.url }}" class="card-img-top" alt="..."
+                                     style="height: 350px;">
+                                <div class="card-body">
+                                    <h3 class="mb-4">{{ service.name }}</h3>
+                                    <p class="card-text">{{ service.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% elif service.category.name == 'Зимняя рыбалка' %}
+                        <div class="hidden col-md-6 winter">
+                            <div class="card w-100">
+                                <img src="{{ service.photo.url }}" class="card-img-top" alt="..."
+                                     style="height: 350px;">
+                                <div class="card-body">
+                                    <h3 class="mb-4">{{ service.name }}</h3>
+                                    <p class="card-text">{{ service.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% include 'inc/form.html' %}
+    <script>
+
+
+        function winterBtnClick() {
+            const winter = document.getElementsByClassName("winter");
+            const summer = document.getElementsByClassName("summer");
+
+            for (let item of winter) {
+                item.classList.remove("hidden");
+            }
+            for (let item of summer) {
+                item.classList.add("hidden");
+            }
+        }
+        function summerBtnClick() {
+            const winter = document.getElementsByClassName("winter");
+            const summer = document.getElementsByClassName("summer");
+
+            for (let item of summer) {
+                item.classList.remove("hidden");
+            }
+            for (let item of winter) {
+                item.classList.add("hidden");
+            }
+        }
+    </script>
+    <style>
+    .hidden {
+        display: none;
+    }
+    </style>
 {% endblock %}

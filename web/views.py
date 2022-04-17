@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from django.views.generic import ListView
-from .models import Photo, Video
+from .models import Photo, Video, Service
 from .mixins import FormMixin
 
 
@@ -54,14 +54,21 @@ class ContactView(View, FormMixin):
         return render(request, 'contact.html', context)
 
 
-class ServiceView(View, FormMixin):
+class ServiceView(ListView, FormMixin):
     """ Представление страницы услуги
     """
+    template_name = 'service.html'
+    context_object_name = "services"
     success_form_url = 'service'
 
-    def get(self, request, *args, **kwargs):
-        context = {"title": "Услуги рыболовного гида", 'form': self.form}
-        return render(request, 'service.html', context)
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(ServiceView, self).get_context_data(**kwargs)
+        context['title'] = 'Услуги рыболовного гида'
+        context['form'] = self.form
+        return context
+
+    def get_queryset(self):
+        return Service.objects.filter(is_active=True)
 
 
 class GalleryView(ListView):
