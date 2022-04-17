@@ -1,10 +1,8 @@
-from django.contrib import messages
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import render
 from django.views import View
 from django.views.generic import ListView
 from .models import Photo
 from .mixins import FormMixin
-from .forms import RequestForm
 
 
 class MainView(View, FormMixin):
