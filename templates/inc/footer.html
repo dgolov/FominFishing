@@ -3,17 +3,19 @@
         <div class="row">
             <div class="col-lg-2 col-md-6 col-sm-6 mb-5">
                 <ul>
-                    <li class="mb-1"><a href="/" style="color: #777777;">Главная</a></li>
-                    <li class="mb-1"><a href="/about" style="color: #777777;">Обо мне</a></li>
-                    <li class="mb-1"><a href="/boat" style="color: #777777;">Моя лодка</a></li>
-                    <li class="mb-1"><a href="/service" style="color: #777777;">Услуги</a></li>
-                    <li class="mb-1"><a href="/gallery" style="color: #777777;">Галерея</a></li>
-                    <li class="mb-1"><a href="/contact" style="color: #777777;">Контакты</a></li>
+                    <li class="mb-1"><a href="{% url 'main' %}" style="color: #777777;">Главная</a></li>
+                    <li class="mb-1"><a href="{% url 'about' %}" style="color: #777777;">Обо мне</a></li>
+                    <li class="mb-1"><a href="{% url 'boat' %}" style="color: #777777;">Моя лодка</a></li>
+                    <li class="mb-1"><a href="{% url 'service' %}" style="color: #777777;">Услуги</a></li>
+                    <li class="mb-1"><a href="{% url 'gallery' %}" style="color: #777777;">Галерея</a></li>
+                    <li class="mb-1"><a href="{% url 'video' %}" style="color: #777777;">Видео</a></li>
+                    <li class="mb-1"><a href="{% url 'contact' %}" style="color: #777777;">Контакты</a></li>
+                    <li class="mb-1"><a href="{% url 'advertising' %}" style="color: #777777;">Реклама</a></li>
                 </ul>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="single-footer-widget">
-                    <h6>Рыбалка с Андреем Фоминым</h6>
+                    <a href="{% url 'main' %}" style="color: #777777;"><h6>Рыбалка с Андреем Фоминым</h6></a>
                     <p>Запишитесь на трофейную рыбалку с профессиональным гидом. Получите незабываемое удовольствие от
                     отдыха на Волге.</p>
                     <p class="footer-text">Copyright &copy;2022 All rights reserved</p>
@@ -27,6 +29,7 @@
                         <a href="#"><i class="fa fa-youtube"></i></a>
                         <a href="#"><i class="fa fa-facebook"></i></a>
                         <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-telegram"></i></a>
                     </div>
                 </div>
             </div>
