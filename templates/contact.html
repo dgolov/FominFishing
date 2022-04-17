@@ -13,13 +13,34 @@
             </div>
         </div>
     </section>
-{#    <div class="whole-wrap">#}
-{#        <div class="container">#}
-{#            <h1 class="mt-5 mb-5">Контакты для связи</h1>#}
-{#            <div class="section-top-border">#}
-{##}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
+    <div class="whole-wrap">
+        <div class="container">
+            <h1 class="mt-5 mb-5">Контакты для связи</h1>
+            <div class="row section-top-border">
+                <div class="col-md-5">
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <th scope="row"><i class="fa fa-phone"></i></th>
+                            <td>Номер телефона</td>
+                            <td><a href="tel: +79200565545">+7 920 056-55-45</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><i class="fa fa-envelope"></i></th>
+                            <td>Электронная почта</td>
+                            <td><a href="mailto: fomin_av27@mail.ru">fomin_av27@mail.ru</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="social d-flex align-items-center mt-5 ml-2">
+                        {% include 'inc/social-links.html' %}
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A810a2247ddf35a335e06a01cc3616b493b465c07a00dbeec584771c39e2e54d9&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
     {% include 'inc/form.html' %}
 {% endblock %}

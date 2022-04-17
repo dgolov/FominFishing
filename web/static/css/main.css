@@ -2577,6 +2577,28 @@ h6 {
   }
 }
 
+.social a {
+  padding-right: 25px;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.social i {
+  color: #5d62f5;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+@media (max-width: 991px) {
+  .social {
+    text-align: left;
+  }
+}
+
 .single-footer-widget input {
   border: none;
   width: 80%;
