@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from django.views.generic import ListView
-from .models import Photo
+from .models import Photo, Video
 from .mixins import FormMixin
 
 
@@ -77,3 +77,28 @@ class GalleryView(ListView):
 
     def get_queryset(self):
         return Photo.objects.all()
+
+
+class VideoView(ListView, FormMixin):
+    """ Представление видео галереи
+    """
+    template_name = 'video.html'
+    context_object_name = "videos"
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(VideoView, self).get_context_data(**kwargs)
+        context['title'] = 'Видео'
+        return context
+
+    def get_queryset(self):
+        return Video.objects.filter(in_active=True)
+
+
+class AdvertisingView(View):
+    """ Представление страницы рекламы
+    """
+    def get(self, request, *args, **kwargs):
+        context = {
+            "title": "Реклама"
+        }
+        return render(request, 'advertising.html', context)
