@@ -10,7 +10,7 @@ SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['89.108.102.131']
 
 
 INSTALLED_APPS = [
