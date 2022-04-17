@@ -1,5 +1,15 @@
 from django.contrib import admin
-from .models import Service, Photo, Review, Request
+from .models import Category, Service, Photo, Review, Request, Video
+
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    """ Отображение услуг в админке
+    """
+    list_display = ['id', 'name']
+    list_display_links = ['id', 'name']
+    search_fields = ['name']
+    prepopulated_fields = {'slug': ('name',)}
 
 
 @admin.register(Service)
@@ -36,3 +46,12 @@ class RequestAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'created_at']
     list_display_links = ['id', 'name']
     search_fields = ['name']
+
+
+@admin.register(Video)
+class VideoAdmin(admin.ModelAdmin):
+    """ Отображение услуг в админке
+    """
+    list_display = ['id', 'title', 'added_at']
+    list_display_links = ['id', 'title']
+    search_fields = ['title']
