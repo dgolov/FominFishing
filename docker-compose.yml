@@ -5,7 +5,7 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
-    command: sh -c "python manage.py collectstatic --noinput && python manage.py migrate && gunicorn school.wsgi:application --bind 0.0.0.0:8000"
+    command: sh -c "python manage.py collectstatic --noinput && python manage.py migrate && gunicorn FominFishing.wsgi:application --bind 0.0.0.0:8000"
     volumes:
       - static_volume:/home/app/web/static
       - media_volume:/home/app/web/media
