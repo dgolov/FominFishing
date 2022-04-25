@@ -8,9 +8,9 @@ SECRET_KEY = 'django-insecure-cfqt_co2mn*516pur&t9$+@t0(-32zfouhuh$&ag#s1s=yv!vj
 
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['89.108.102.131']
+ALLOWED_HOSTS = ['127.0.0.1', '89.108.102.131']
 
 
 INSTALLED_APPS = [
