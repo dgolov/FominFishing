@@ -13,7 +13,7 @@ DEBUG = False
 ALLOWED_HOSTS = ['127.0.0.1', '89.108.102.131']
 
 CSRF_TRUSTED_ORIGINS = ['http://89.108.102.131']
-
+CSRF_COOKIE_SECURE = False
 
 INSTALLED_APPS = [
     'django.contrib.admin',
