@@ -1,10 +1,14 @@
 import os
+
+from dotenv import load_dotenv
 from pathlib import Path
 
 
+load_dotenv()
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-cfqt_co2mn*516pur&t9$+@t0(-32zfouhuh$&ag#s1s=yv!vj'
+SECRET_KEY = str(os.environ.get("SECRET_KEY"))
 
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
@@ -103,10 +107,10 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-DEFAULT_FROM_EMAIL = 'myvmeste_info@mail.ru'
-EMAIL_HOST = 'smtp.mail.ru'
-EMAIL_PORT = 465
-EMAIL_HOST_USER = 'myvmeste_info@mail.ru'
-EMAIL_HOST_PASSWORD = 'Dima5671356713567'
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_PORT = int(os.environ.get('EMAIL_PORT'))
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
