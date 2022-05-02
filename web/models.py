@@ -103,3 +103,10 @@ class Video(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Calendar(models.Model):
+    """ Модель даты рыбалок
+    """
+    title = models.CharField(max_length=150, verbose_name='Название')
+    date = models.DateField(verbose_name='Дата рыбалки')

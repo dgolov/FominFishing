@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Service, Photo, Review, Request, Video
+from .models import Category, Service, Photo, Review, Request, Video, Calendar
 
 
 @admin.register(Category)
@@ -54,4 +54,13 @@ class VideoAdmin(admin.ModelAdmin):
     """
     list_display = ['id', 'title', 'added_at']
     list_display_links = ['id', 'title']
+    search_fields = ['title']
+
+
+@admin.register(Calendar)
+class CalendarAdmin(admin.ModelAdmin):
+    """ Отображение дат рыбалок
+    """
+    list_display = ['id', 'title', 'date']
+    list_display_links = ['title']
     search_fields = ['title']
