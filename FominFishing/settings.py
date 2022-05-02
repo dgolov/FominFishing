@@ -12,7 +12,7 @@ SECRET_KEY = str(os.environ.get("SECRET_KEY"))
 
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
-DEBUG = False
+DEBUG = bool(int(os.environ.get("DEBUG", default=1)))
 
 ALLOWED_HOSTS = ['127.0.0.1', '89.108.102.131']
 
