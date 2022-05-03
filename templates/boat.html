@@ -2,18 +2,43 @@
 {% load static %}
 
 {% block content %}
-    <section class="generic-banner relative">
+    <section class="generic-banner relative"
+             style="background: url({% static 'img/boat/photo_2022-05-02 13.09.00.jpeg' %});
+                     background-size: cover; background-position: center 30%;">>>
         {% include 'inc/navbar.html' %}
         <div class="container">
             <div class="row height align-items-center justify-content-center">
                 <div class="col-lg-10">
                     <div class="generic-banner-content">
-                        <h2 class="text-white">The Elements Page</h2>
-                        <p class="text-white">It won’t be a bigger problem to find one video game lover in your <br>
-                            neighbor. Since the introduction of Virtual Game.</p>
+                        <h2 class="text-white">Моя лодка</h2>
+                        <p class="text-white">Здесь вы найдете описание и характеристики катера и установленного на него
+                            оборудования.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <div class="whole-wrap">
+        <div class="container">
+            <h1 class="mt-5 mb-5">Рыбалка на катере</h1>
+            <div class="row section-top-border">
+                <div class="col-md-12">
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <th scope="row">Мотор</th>
+                            <td>Honda 220</td>
+                            <td>Описание</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Эхолот</th>
+                            <td>Название</td>
+                            <td>Описание</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
