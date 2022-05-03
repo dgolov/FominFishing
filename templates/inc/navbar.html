@@ -1,10 +1,10 @@
+{% load static %}
 <section class="banner-area" id="home">
     <header class="default-header">
-        <nav class="navbar navbar-expand-lg  navbar-light">
+        <nav class="navbar navbar-expand-lg  navbar-light" style="padding: 15px;">
             <div class="container">
                 <a class="navbar-brand text-white" href="{% url 'main' %}">
-                    Рыбалка с Андреем Фоминым
-                    <img src="img/logo.png" alt="">
+                    <img src="{% static 'img/logo2.png' %}" alt="" style="width: 75px; position: absolute; top: 0;">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
