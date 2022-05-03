@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import MainView, AboutView, BoatView, ServiceView, GalleryView, ContactView, VideoView, AdvertisingView
+from .views import MainView, AboutView, BoatView, ServiceView, GalleryView, ContactView, VideoView, AdvertisingView, CalendarView
 
 
 urlpatterns = [
@@ -12,4 +12,5 @@ urlpatterns = [
     path('video', VideoView.as_view(), name='video'),
     path('contact', ContactView.as_view(), name='contact'),
     path('advertising', AdvertisingView.as_view(), name='advertising'),
+    path('calendar', CalendarView.as_view(), name='calendar'),
 ]

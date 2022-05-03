@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="generic-banner relative"
+             style="background: url({% static 'img/service/tild6531-3438-4932-b337-353033393363__7-960x540.jpg' %});
+                     background-size: cover; background-position: center 30%;">
+        {% include 'inc/navbar.html' %}
+        <div class="container">
+            <div class="row height align-items-center justify-content-center">
+                <div class="col-lg-10">
+                    <div class="generic-banner-content">
+                        <h2 class="text-white">Календарь рыбалок</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="whole-wrap">
+        <div class="container">
+            <h1 class="mt-5 mb-5">{{ title }}</h1>
+            <p>Здесь вы можете посмотреть свободные даты в календаре для записи на рыбалку и забронировать время для
+                себя, отправив заявку с помощью формы обратной связи.</p>
+            <div class="row section-top-border">
+                <div class="col-md-12">
+                    <div id='calendar'></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'inc/form.html' %}
+
+    <script>
+        {% if calendar %}
+              document.addEventListener('DOMContentLoaded', function() {
+                let calendarEl = document.getElementById('calendar');
+
+                let calendar = new FullCalendar.Calendar(calendarEl, {
+                  headerToolbar: {
+                    left: 'prev,next',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,listMonth'
+                  },
+                    locale: 'ru',
+                    initialDate: Date.now(),
+                    navLinks: true,
+                    businessHours: true,
+                    editable: true,
+                    selectable: true,
+                    events: [
+                      {% for item in calendar %}
+                          {% if item.description %}
+                              {
+                                  title: '{{ item.description }}',
+                                  start: '{{ item.start_date|date:"Y-m-d" }}',
+                                  end: '{{ item.end_date|date:"Y-m-d" }}',
+                                  display: 'background',
+                                  color: '#ff9f89',
+                                  overlap: false,
+                              },
+                          {% else %}
+                              {
+                                  start: '{{ item.start_date|date:"Y-m-d" }}',
+                                  end: '{{ item.end_date|date:"Y-m-d" }}',
+                                  display: 'background',
+                                  color: '#ff9f89',
+                                  overlap: false,
+                              },
+                          {% endif %}
+                      {% endfor %}
+                  ]
+                });
+
+                calendar.render();
+              });
+        {% endif %}
+    </script>
+{% endblock %}

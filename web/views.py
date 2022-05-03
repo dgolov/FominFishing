@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from django.views.generic import ListView
-from .models import Photo, Video, Service
+from .models import Photo, Video, Service, Calendar
 from .mixins import FormMixin
 
 
@@ -109,3 +109,19 @@ class AdvertisingView(View):
             "title": "Реклама"
         }
         return render(request, 'advertising.html', context)
+
+
+class CalendarView(ListView, FormMixin):
+    """ Представление видео галереи
+    """
+    template_name = 'calendar.html'
+    context_object_name = "calendar"
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(CalendarView, self).get_context_data(**kwargs)
+        context['title'] = 'Календарь рыбалок'
+        context['form'] = self.form
+        return context
+
+    def get_queryset(self):
+        return Calendar.objects.all()

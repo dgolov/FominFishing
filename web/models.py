@@ -109,10 +109,12 @@ class Calendar(models.Model):
     """ Модель даты рыбалок
     """
     title = models.CharField(max_length=150, verbose_name='Название')
-    date = models.DateField(verbose_name='Дата рыбалки')
+    start_date = models.DateField(verbose_name='Дата начала рыбалки', blank=True, null=True)
+    end_date = models.DateField(verbose_name='Дата окончания рыбалки', blank=True, null=True)
+    description = models.CharField(max_length=150, verbose_name='Описание события', blank=True, null=True)
 
     class Meta:
-        verbose_name = 'Календарь'
+        verbose_name = 'Событие'
         verbose_name_plural = 'Календарь рыбалок'
 
     def __str__(self):

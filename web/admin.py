@@ -61,6 +61,6 @@ class VideoAdmin(admin.ModelAdmin):
 class CalendarAdmin(admin.ModelAdmin):
     """ Отображение дат рыбалок
     """
-    list_display = ['id', 'title', 'date']
+    list_display = ['id', 'title', 'start_date', 'end_date']
     list_display_links = ['title']
     search_fields = ['title']
