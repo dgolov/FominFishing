@@ -10,8 +10,8 @@
             <div class="row height align-items-center justify-content-center">
                 <div class="col-lg-10">
                     <div class="generic-banner-content">
-                        <h2 class="text-white">Услуги</h2>
-                        <p class="text-white">Выберите сезон и понравившуюся вам услугу и укажите ее в форме записи.</p>
+                        <h1 class="text-white">{{ title }}</h1>
+                        <p class="text-white"></p>
                     </div>
                 </div>
             </div>
@@ -19,7 +19,8 @@
     </section>
     <div class="whole-wrap">
         <div class="container">
-            <h1 class="mt-5 mb-5">{{ title }}</h1>
+            <p class="mt-5 mb-5">Выберите сезон и понравившуюся вам услугу и укажите ее в форме записи.
+                Так же вы можете подобрать свободную дату открыв <a href="{% url 'calendar' %}">календарь рыбалок</a>.</p>
             <div class="row section-top-border">
                 <div class="col-md-6">
                     <button class="genric-btn success radius w-100" onclick="summerBtnClick()">Летняя рыбалка</button>
