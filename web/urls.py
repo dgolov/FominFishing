@@ -1,16 +1,16 @@
 from django.urls import path
 
-from .views import MainView, AboutView, BoatView, ServiceView, GalleryView, ContactView, VideoView, AdvertisingView, CalendarView
+from . import views
 
 
 urlpatterns = [
-    path('', MainView.as_view(), name='main'),
-    path('about', AboutView.as_view(), name='about'),
-    path('boat', BoatView.as_view(), name='boat'),
-    path('service', ServiceView.as_view(), name='service'),
-    path('gallery', GalleryView.as_view(), name='gallery'),
-    path('video', VideoView.as_view(), name='video'),
-    path('contact', ContactView.as_view(), name='contact'),
-    path('advertising', AdvertisingView.as_view(), name='advertising'),
-    path('calendar', CalendarView.as_view(), name='calendar'),
+    path('', views.MainView.as_view(), name='main'),
+    path('about', views.AboutView.as_view(), name='about'),
+    path('boat', views.BoatView.as_view(), name='boat'),
+    path('service', views.ServiceView.as_view(), name='service'),
+    path('gallery', views.GalleryView.as_view(), name='gallery'),
+    path('video', views.VideoView.as_view(), name='video'),
+    path('contact', views.ContactView.as_view(), name='contact'),
+    path('advertising', views.AdvertisingView.as_view(), name='advertising'),
+    path('calendar', views.CalendarView.as_view(), name='calendar'),
 ]
