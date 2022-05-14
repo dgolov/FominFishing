@@ -2,17 +2,47 @@
 {% load static %}
 
 {% block content %}
-    <section class="generic-banner relative">
+    <section class="generic-banner relative"
+             style="background: url({% static 'img/service/tild6531-3438-4932-b337-353033393363__7-960x540.jpg' %});
+                     background-size: cover; background-position: center 30%;">
         {% include 'inc/navbar.html' %}
         <div class="container">
             <div class="row height align-items-center justify-content-center">
                 <div class="col-lg-10">
                     <div class="generic-banner-content">
-                        <h2 class="text-white">Страница в разработке</h2>
+                        <h1 class="text-white">Блог о рыбалке</h1>
                         <p class="text-white"></p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <div class="whole-wrap">
+        <div class="container">
+            <p class="mt-5">На этой странице собраны новости и отчеты о рыбалках.</p>
+            <div class="row section-top-border">
+                <div class="col-md-12">
+                    <h3 class="mb-30">База отдыха</h3>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="{% static 'img/about/photo_2022-04-10 14.05.40.jpeg' %}" alt="" class="img-fluid">
+                        </div>
+                        <div class="col-md-9 mt-sm-20">
+                            <p>Гости, которые приехали на рыбалку получают максимальный комфорт. База отдыха расположена
+                                в
+                                Разнежье на берегу реки Волга и готова к приему гостей в любое время года. В вашем
+                                распоряжении уютные домики для отдыха, в которых есть комфортные номера оснащенные всеми
+                                необходимыми удобствами. Лагерь находится в 110 км от Нижнего Новгорода, при этом к нему
+                                ведет автомобильная дорога, вокруг - большой живописный лес. Имеется развитая
+                                инфраструктура: вам будут доступны электричество, Wi-Fi, баня, душевые с горячей водой,
+                                настольный тенис, футбольная и волебольная площадки, малая (до 15 человек) и большая
+                                (до 100 человек) беседки, катамаран и хороший песчанный пляж, где можно загорать и
+                                купаться.
+                                Рыбалка на Волге станет одним из лучших приключений в вашей жизни! Приезжайте к нам за
+                                фантастическим уловом и незабываемыми впечатлениями!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 {% endblock %}
