@@ -4,7 +4,7 @@ from .models import Post
 
 
 class BlogView(ListView):
-    """ Представление видео галереи
+    """ Представление блога
     """
     template_name = 'blog.html'
     context_object_name = "blog"
@@ -19,6 +19,8 @@ class BlogView(ListView):
 
 
 class PostDetailView(DetailView):
+    """ Представление поста блога
+    """
     model = Post
     template_name = 'blog_detail.html'
     context_object_name = 'post'
