@@ -93,7 +93,7 @@ class Video(models.Model):
     title = models.CharField(max_length=150, verbose_name='Заголовок')
     description = models.TextField(verbose_name='Описание')
     added_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата добавления')
-    frame = models.TextField(verbose_name='Код с youtube')
+    frame = models.CharField(max_length=150, verbose_name='Ссылка на youtube')
     logo = models.ImageField(upload_to='videos', verbose_name='Изображение / Логитип')
     in_active = models.BooleanField(default=True, verbose_name='Опубликовано')
 
