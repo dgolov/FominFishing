@@ -1,6 +1,7 @@
 from django.views.generic import ListView, DetailView
 
 from .models import Post
+from web.mixins import FormMixin
 
 
 class BlogView(ListView):
@@ -18,7 +19,7 @@ class BlogView(ListView):
         return Post.objects.all()
 
 
-class PostDetailView(DetailView):
+class PostDetailView(DetailView, FormMixin):
     """ Представление поста блога
     """
     model = Post
@@ -28,4 +29,5 @@ class PostDetailView(DetailView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(PostDetailView, self).get_context_data(**kwargs)
         context['title'] = self.object.title
+        context['form'] = self.form
         return context
