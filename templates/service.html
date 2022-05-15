@@ -18,8 +18,10 @@
     <div class="whole-wrap">
         <div class="container">
             <h1 class="title mt-5">{{ title }}</h1>
-            <p class="mt-4">Выберите сезон и понравившуюся вам услугу и укажите ее в форме записи.
-                Так же вы можете подобрать свободную дату открыв <a href="{% url 'calendar' %}">календарь рыбалок</a>.</p>
+            <p class="mt-4">
+                Выберите сезон и понравившуюся вам услугу и укажите ее в форме записи.
+                Так же вы можете подобрать свободную дату открыв <a href="{% url 'calendar' %}">календарь рыбалок</a>.
+            </p>
             <div class="row section-top-border">
                 <div class="col-md-6">
                     <button class="genric-btn success radius w-100" onclick="summerBtnClick()">Летняя рыбалка</button>
@@ -58,6 +60,7 @@
         </div>
     </div>
     {% include 'inc/form.html' %}
+
     <script>
         function winterBtnClick() {
             const winter = document.getElementsByClassName("winter");
