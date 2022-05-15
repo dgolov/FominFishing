@@ -31,12 +31,13 @@ class AboutView(View, FormMixin):
         return render(request, 'about.html', context)
 
 
-class BoatView(View):
+class BoatView(View, FormMixin):
     """ Представление страницы о лодке
     """
     def get(self, request, *args, **kwargs):
         context = {
-            "title": "Моя лодка"
+            "title": "Моя лодка",
+            'form': self.form
         }
         return render(request, 'boat.html', context)
 
