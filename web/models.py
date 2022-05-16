@@ -1,4 +1,5 @@
 from django.db import models
+from .helpers import auto_make_watermark
 
 
 class Category(models.Model):
@@ -78,6 +79,7 @@ class Review(models.Model):
     email = models.EmailField(verbose_name='Email', blank=True, null=True)
     phone = models.CharField(max_length=20, verbose_name='Номер телефона', blank=True, null=True)
     comment = models.TextField(verbose_name='Комментарий')
+    is_published = models.BooleanField(default=False, verbose_name='Опубликовано')
 
     class Meta:
         verbose_name = 'Отзыв'

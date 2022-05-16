@@ -4,7 +4,7 @@ from .models import Category, Service, Photo, Review, Request, Video, Calendar
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    """ Отображение услуг в админке
+    """ Отображение категорий услуг в админке
     """
     list_display = ['id', 'name']
     list_display_links = ['id', 'name']
@@ -24,7 +24,7 @@ class ServiceAdmin(admin.ModelAdmin):
 
 @admin.register(Photo)
 class PhotoAdmin(admin.ModelAdmin):
-    """ Отображение услуг в админке
+    """ Отображение фото в админке
     """
     list_display = ['id', 'path']
     list_display_links = ['id', 'path']
@@ -32,16 +32,17 @@ class PhotoAdmin(admin.ModelAdmin):
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
-    """ Отображение услуг в админке
+    """ Отображение отзывов в админке
     """
-    list_display = ['id', 'name', 'created_at']
+    list_display = ['id', 'name', 'created_at', 'is_published']
     list_display_links = ['id', 'name']
+    list_filter = ['is_published']
     search_fields = ['name']
 
 
 @admin.register(Request)
 class RequestAdmin(admin.ModelAdmin):
-    """ Отображение услуг в админке
+    """ Отображение заявок в админке
     """
     list_display = ['id', 'name', 'created_at']
     list_display_links = ['id', 'name']
@@ -50,7 +51,7 @@ class RequestAdmin(admin.ModelAdmin):
 
 @admin.register(Video)
 class VideoAdmin(admin.ModelAdmin):
-    """ Отображение услуг в админке
+    """ Отображение видео в админке
     """
     list_display = ['id', 'title', 'added_at']
     list_display_links = ['id', 'title']

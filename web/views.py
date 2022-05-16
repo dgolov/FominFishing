@@ -1,7 +1,10 @@
-from django.shortcuts import render
+from django.contrib import messages
+from django.core.mail import send_mail
+from django.shortcuts import render, HttpResponseRedirect
 from django.views import View
 from django.views.generic import ListView
-from .models import Photo, Video, Service, Calendar
+from .forms import ReviewForm
+from .models import Photo, Video, Service, Calendar, Review
 from .mixins import FormMixin
 
 
@@ -126,3 +129,35 @@ class CalendarView(ListView, FormMixin):
 
     def get_queryset(self):
         return Calendar.objects.all()
+
+
+class ReviewView(ListView):
+    """ Представление страницы отзывов
+    """
+    template_name = 'reviews.html'
+    context_object_name = "reviews"
+    success_form_url = ''
+    form = ReviewForm()
+
+    def post(self, request, *args, **kwargs):
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.add_message(request, messages.SUCCESS, 'Благодарю Вас за отзыв!')
+            send_mail(
+                'Тест',
+                'Тестовое сообщение',
+                'myvmeste_info@mail.ru',
+                ['dgolov@icloud.com'],
+                fail_silently=False
+            )
+            return HttpResponseRedirect(f'/{self.success_form_url}#review')
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(ReviewView, self).get_context_data(**kwargs)
+        context['title'] = 'Отзывы'
+        context['form'] = self.form
+        return context
+
+    def get_queryset(self):
+        return Review.objects.filter(is_published=True)

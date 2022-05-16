@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.admin.widgets import AdminDateWidget
-from .models import Request, Service
+from .models import Request, Service, Review
 
 
 class RequestForm(forms.ModelForm):
@@ -46,3 +46,36 @@ class RequestForm(forms.ModelForm):
     class Meta:
         model = Request
         fields = ('name', 'service', 'date', 'email', 'phone', 'comment')
+
+
+class ReviewForm(forms.ModelForm):
+    name = forms.CharField(
+        widget=forms.TextInput(
+            attrs={'class': 'form-control common-input mb-20', 'placeholder': 'Укажите ваше имя'}
+        )
+    )
+    email = forms.EmailField(
+        required=False,
+        widget=forms.TextInput(
+            attrs={'class': 'form-control common-input mb-20', 'placeholder': 'Укажите email'}
+        )
+    )
+    phone = forms.CharField(
+        required=False,
+        widget=forms.TextInput(
+            attrs={'class': 'form-control common-input mb-20', 'placeholder': 'Укажите номер телефона'}
+        )
+    )
+    comment = forms.CharField(
+        widget=forms.Textarea(
+            attrs={
+                'class': 'form-control common-textarea mt-10 ',
+                'placeholder': 'Ваш комментарий',
+                'style': 'height: 200px;'
+            }
+        )
+    )
+
+    class Meta:
+        model = Review
+        fields = ('name', 'email', 'phone', 'comment')

@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="generic-banner relative"
+             style="background: url({% static 'img/service/tild6531-3438-4932-b337-353033393363__7-960x540.jpg' %});
+                     background-size: cover; background-position: center 30%;">
+        {% include 'inc/navbar.html' %}
+        <div class="container">
+            <div class="row height align-items-center justify-content-center">
+                <div class="col-lg-10">
+                    <div class="generic-banner-content">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="whole-wrap">
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <nav aria-label="breadcrumb">
+                        <ol>
+                            <li class="breadcrumb-item"><a href="/">Главная</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Отзывы</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="col-md-12 mt-5">
+                    <h1 class="title">Андрей Фомин. Отзывы о рыбалке</h1>
+                    <p class="mt-5">Здесь вы можете прочитать отзывы довольных клиентов. Если вы желаете поделиться
+                        впечатлениями о моих услугах, то можете заполнить форму отправки и ваш отзыв будет опубликован.
+                        Я выражаю свою благодарность за теплые слова всем кто оставил здесь свои комментарии и буду
+                        стараться учитывать каждое мнение для того, чтобы сделать ваш отдых еще лучше!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="contact-area section-gap" id="contact">
+        {% if messages %}
+            <div class="alert alert-success" role="alert">
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                            {{ message }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        <div class="container">
+            <form class="form-area" method="post" class="contact-form text-right">
+                <div class="row">
+                    <div class="col-lg-4 form-group">
+                        <label>Имя</label>
+                        {{ form.name }}
+                    </div>
+                    <div class="col-lg-4 form-group">
+                        <label>Email*</label>
+                        {{ form.email }}
+                    </div>
+                    <div class="col-lg-4 form-group">
+                        <label>Номер телефона*</label>
+                        {{ form.phone }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 form-group">
+                        <label>Сообщение</label>
+                        {{ form.comment }}
+                        {% csrf_token %}
+                        <button class="primary-btn mt-20 w-100">Отправить<span class="lnr lnr-arrow-right"></span>
+                        </button>
+                        <div class="alert-msg">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <div class="whole-wrap">
+        <div class="container mb-5">
+            <div class="row mb-4">
+                <div class="col-md-12">
+                    <h2 class="title">Отзывы:</h2>
+                </div>
+            </div>
+            {% for rewiew in reviews %}
+                <div class="row" style="border-bottom: 1px dotted #eee; padding: 50px 0;">
+                    <h5>{{ rewiew.name }}</h5>
+                    <p style="margin-top: 20px;">{{ rewiew.comment }}</p>
+                    <small style="float: right;">{{ rewiew.created_at }}</small>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
