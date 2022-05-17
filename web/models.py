@@ -51,6 +51,10 @@ class Photo(models.Model):
     def __str__(self):
         return self.short_description
 
+    # def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+    #     auto_make_watermark(self.path)
+    #     super(Photo, self).save()
+
 
 class Request(models.Model):
     """ Модели заявки

@@ -3,7 +3,7 @@
 
 {% block content %}
     <section class="generic-banner relative"
-             style="background: url({% static 'img/boat/photo_2022-05-02 13.09.00.jpeg' %});
+             style="background: url({% static 'img/boat_backgroung.jpg' %});
                      background-size: cover; background-position: center 30%;">
         {% include 'inc/navbar.html' %}
         <div class="container">
@@ -17,7 +17,7 @@
     </section>
     <div class="whole-wrap">
         <div class="container">
-             <div class="row mt-3">
+            <div class="row mt-3">
                 <div class="col-md-12">
                     <nav aria-label="breadcrumb">
                         <ol>
@@ -59,5 +59,53 @@
             </div>
         </div>
     </div>
+    <section class="gallery-area" id="gallery">
+        <div class="container-fluid">
+            <div class="row no-padding">
+                <div class="active-gallery">
+                    <div class="item single-gallery mx-2">
+                        <a href="{% static 'img/boat/photo_2022-05-02 13.09.00.jpeg' %}" class="img-pop-up">
+                            <img src="{% static 'img/boat/photo_2022-05-02 13.09.00.jpeg' %}" alt="">
+                        </a>
+                    </div>
+                    <div class="item single-gallery mx-2">
+                        <a href="{% static 'img/boat/photo_2022-05-17 20.18.40.jpeg' %}" class="img-pop-up">
+                            <img src="{% static 'img/boat/photo_2022-05-17 20.18.40.jpeg' %}" alt="">
+                        </a>
+                    </div>
+                    <div class="item single-gallery mx-2">
+                        <a href="{% static 'img/boat/photo_2022-05-17 20.18.51.jpeg' %}" class="img-pop-up">
+                            <img src="{% static 'img/boat/photo_2022-05-17 20.18.51.jpeg' %}" alt="">
+                        </a>
+                    </div>
+                    <div class="item single-gallery mx-2">
+                        <a href="{% static 'img/boat/photo_2022-05-17 20.18.55.jpeg' %}" class="img-pop-up">
+                            <img src="{% static 'img/boat/photo_2022-05-17 20.18.55.jpeg' %}" alt="">
+                        </a>
+                    </div>
+                    <div class="item single-gallery mx-2">
+                        <a href="{% static 'img/boat/photo_2022-05-17 20.19.04.jpeg' %}" class="img-pop-up">
+                            <img src="{% static 'img/boat/photo_2022-05-17 20.19.04.jpeg' %}" alt="">
+                        </a>
+                    </div>
+                    <div class="item single-gallery mx-2">
+                        <a href="{% static 'img/boat/photo_2022-05-17 20.38.21.jpeg' %}" class="img-pop-up">
+                            <img src="{% static 'img/boat/photo_2022-05-17 20.38.21.jpeg' %}" alt="">
+                        </a>
+                    </div>
+                    <div class="item single-gallery mx-2">
+                        <a href="{% static 'img/boat/photo_2022-05-17 20.38.25.jpeg' %}" class="img-pop-up">
+                            <img src="{% static 'img/boat/photo_2022-05-17 20.38.25.jpeg' %}" alt="">
+                        </a>
+                    </div>
+                    <div class="item single-gallery mx-2">
+                        <a href="{% static 'img/boat/photo_2022-05-17 20.38.51.jpeg' %}" class="img-pop-up">
+                            <img src="{% static 'img/boat/photo_2022-05-17 20.38.51.jpeg' %}" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     {% include 'inc/form.html' %}
 {% endblock %}
