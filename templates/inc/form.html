@@ -37,8 +37,10 @@
                     {{ form.service }}
                     <label>Сообщение</label>
                     {{ form.comment }}
+                </div>
+                <div class="form-group col-lg-12">
                     {% csrf_token %}
-                    <button class="primary-btn mt-20">Отправить<span class="lnr lnr-arrow-right"></span></button>
+                    <button class="primary-btn mt-10 w-100">Отправить</button>
                     <div class="alert-msg">
                     </div>
                 </div>
