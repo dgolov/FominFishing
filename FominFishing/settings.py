@@ -14,9 +14,9 @@ SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
 DEBUG = bool(int(os.environ.get("DEBUG", default=1)))
 
-ALLOWED_HOSTS = ['127.0.0.1', '89.108.102.131']
+ALLOWED_HOSTS = ['127.0.0.1', '151.248.120.29', 'av-fomin.ru']
 
-CSRF_TRUSTED_ORIGINS = ['http://89.108.102.131']
+CSRF_TRUSTED_ORIGINS = ['http://151.248.120.29', 'http://av-fomin.ru', 'https://av-fomin.ru']
 CSRF_COOKIE_SECURE = False
 
 INSTALLED_APPS = [
