@@ -119,3 +119,35 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    "formatters": {
+        "formatter": {
+            "format": '%(asctime)s - %(levelname)s - %(message)s',
+            "datefmt": os.environ.get('LOG_FORMAT'),
+        },
+    },
+    'handlers': {
+        'file_handler': {
+            'level': os.environ.get('LOG_LEVEL'),
+            'class': 'logging.FileHandler',
+            "formatter": "formatter",
+            'filename': os.environ.get('LOG_PATH')
+        },
+    },
+    'loggers': {
+        'web': {
+            'handlers': ['file_handler'],
+            'level': os.environ.get('LOG_LEVEL'),
+            'propagate': True,
+        },
+        'blog': {
+            'handlers': ['file_handler'],
+            'level': os.environ.get('LOG_LEVEL'),
+            'propagate': True,
+        }
+    }
+}

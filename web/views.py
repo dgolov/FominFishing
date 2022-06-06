@@ -1,3 +1,5 @@
+import logging
+
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.shortcuts import render, HttpResponseRedirect
@@ -6,6 +8,9 @@ from django.views.generic import ListView
 from .forms import ReviewForm
 from .models import Photo, Video, Service, Calendar, Review
 from .mixins import FormMixin
+
+
+logger = logging.getLogger(__name__)
 
 
 class MainView(View, FormMixin):
@@ -141,17 +146,26 @@ class ReviewView(ListView):
 
     def post(self, request, *args, **kwargs):
         form = ReviewForm(request.POST)
+        logger.debug('[ReviewView] - Try to post review')
         if form.is_valid():
             form.save()
+            logger.info('[ReviewView] Post review successfully')
             messages.add_message(request, messages.SUCCESS, 'Благодарю Вас за отзыв!')
-            send_mail(
-                'Тест',
-                'Тестовое сообщение',
-                'myvmeste_info@mail.ru',
-                ['dgolov@icloud.com'],
-                fail_silently=False
-            )
+            try:
+                logger.debug('[ReviewView] - Try to send mail')
+                send_mail(
+                    'Опубликован отзыв на сайте',
+                    'Опубликован отзыв на сайте av-fomin.ru, необходимо подтвердить подерацию.',
+                    'myvmeste_info@mail.ru',
+                    ['dgolov@icloud.com'],
+                    fail_silently=False
+                )
+            except Exception as e:
+                logger.error(f'[ReviewView] Send mail failed: {e}')
             return HttpResponseRedirect(f'/{self.success_form_url}#review')
+        logger.error('[ReviewView] Post review failed')
+        messages.add_message(request, messages.ERROR, 'Произошла ошибка! Попробуйте повторить запрос позже.')
+        return HttpResponseRedirect('/reviews')
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(ReviewView, self).get_context_data(**kwargs)
