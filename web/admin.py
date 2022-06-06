@@ -26,8 +26,8 @@ class ServiceAdmin(admin.ModelAdmin):
 class PhotoAdmin(admin.ModelAdmin):
     """ Отображение фото в админке
     """
-    list_display = ['id', 'path']
-    list_display_links = ['id', 'path']
+    list_display = ['id', 'short_description', 'path']
+    list_display_links = ['id', 'short_description', 'path']
 
 
 @admin.register(Review)
