@@ -126,13 +126,13 @@ LOGGING = {
     'disable_existing_loggers': False,
     "formatters": {
         "formatter": {
-            "format": os.environ.get('LOG_FORMAT'),
+            "format": '%(asctime)s - %(levelname)s - %(message)s',
             "datefmt": '%d-%b-%y %H:%M:%S',
         },
     },
     'handlers': {
         'file_handler': {
-            'level': os.environ.get('LOG_LEVEL'),
+            'level': 'DEBUG',
             'class': 'logging.FileHandler',
             "formatter": "formatter",
             'filename': os.environ.get('LOG_PATH')
@@ -141,12 +141,12 @@ LOGGING = {
     'loggers': {
         'web': {
             'handlers': ['file_handler'],
-            'level': os.environ.get('LOG_LEVEL'),
+            'level': 'DEBUG',
             'propagate': True,
         },
         'blog': {
             'handlers': ['file_handler'],
-            'level': os.environ.get('LOG_LEVEL'),
+            'level': 'DEBUG',
             'propagate': True,
         }
     }
