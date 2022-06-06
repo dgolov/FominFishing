@@ -126,8 +126,8 @@ LOGGING = {
     'disable_existing_loggers': False,
     "formatters": {
         "formatter": {
-            "format": '%(asctime)s - %(levelname)s - %(message)s',
-            "datefmt": os.environ.get('LOG_FORMAT'),
+            "format": os.environ.get('LOG_FORMAT'),
+            "datefmt": '%d-%b-%y %H:%M:%S',
         },
     },
     'handlers': {
